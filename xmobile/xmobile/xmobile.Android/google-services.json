@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "364008942860",
+    "project_id": "crmcocamar-test",
+    "storage_bucket": "crmcocamar-test.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:364008942860:android:cfa6f4ca93e784022d6d29",
+        "android_client_info": {
+          "package_name": "com.eacj.FirebaseIntegrationTest"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "364008942860-itdgp4iola98mpgu0imeb80jl9ektd6a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBLGSfC48NIT4ly9mPQa545m1j6F0vU49Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "364008942860-itdgp4iola98mpgu0imeb80jl9ektd6a.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
