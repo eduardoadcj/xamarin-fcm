@@ -7,9 +7,9 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:364008942860:android:cfa6f4ca93e784022d6d29",
+        "mobilesdk_app_id": "1:364008942860:android:e7006020ee9f7aae2d6d29",
         "android_client_info": {
-          "package_name": "com.eacj.FirebaseIntegrationTest"
+          "package_name": "com.eacj.xmobile"
         }
       },
       "oauth_client": [
