@@ -1,7 +1,10 @@
-//install module firebase-admin
 
+// Install firebase-admin module.
 var admin = require('firebase-admin');
-var serviceAccount = require('../../XamarinFCMServiceAccountKey.json');
+
+// Firebase service credentials
+// Can be found on Firebase -> Project Configurations -> Service Accounts
+var serviceAccount = require('../../serviceAccountKey.json');
 
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount)
@@ -9,22 +12,25 @@ admin.initializeApp({
 
 var messagingService = admin.messaging();
 
-//É necessário definir uma condição, token ou topico
+// A message has to have an topic, condition or token to be sent.
 var message = {
-    //é necessário definir topico de segmentação
     topic: 'android', 
 
-    //dados personalizados
+    // Custom key-value data.
     data: {
         Type: 'Sync_Request',
         Coverage: 'Full'
     },
+
+    // Platform specific properties.
     android: {
-        //Pode ser 'normal' ou 'high'
-        //Quando normal, aguarda a proxima janela de manutenção para executar
-        //quando high, executa imediatamente
+
+        // Priority can be 'normal' or 'high'.
+        // When 'normal', OS waits to next maintenance window to process the message.
+        // When 'high', executes immediately.
         priority:'high'
     },
+
     webpush: {
         headers: {
             Urgency: 'high'
