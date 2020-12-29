@@ -13,11 +13,16 @@ var messagingService = admin.messaging();
 var message = {
     //é necessário definir topico de segmentação
     topic: 'android', 
+
+    //dados personalizados
     data: {
         Type: 'Sync_Request',
         Coverage: 'Full'
     },
     android: {
+        //Pode ser 'normal' ou 'high'
+        //Quando normal, aguarda a proxima janela de manutenção para executar
+        //quando high, executa imediatamente
         priority:'high'
     },
     webpush: {
