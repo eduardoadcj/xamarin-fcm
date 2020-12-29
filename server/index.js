@@ -11,18 +11,18 @@ var messagingService = admin.messaging();
 
 //É necessário definir uma condição, token ou topico
 var message = {
-    //definindo condição como todos que não estão em um tópico
-    "condition": "!('anytopicyoudontwanttouse' in topics)", 
-    "data":{
-        "Type" : "Sync_Request",
-        "Coverage" : "Full"
+    //é necessário definir topico de segmentação
+    topic: 'android', 
+    data: {
+        Type: 'Sync_Request',
+        Coverage: 'Full'
     },
-    "android":{
-        "priority":"high"
+    android: {
+        priority:'high'
     },
-    "webpush": {
-        "headers": {
-            "Urgency": "high"
+    webpush: {
+        headers: {
+            Urgency: 'high'
         }
     }
 };
@@ -33,4 +33,5 @@ messagingService.send(message)
     })
     .catch((err) => {
         console.log("Error sending the message:\n",err);
-    });
+    })
+    .finally(() => process.exit());
