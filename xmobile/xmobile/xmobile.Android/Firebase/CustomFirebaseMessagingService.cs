@@ -12,6 +12,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using xmobile.Droid.Services;
 
 namespace XamarinFirebaseIntegration.Droid.Firebase
 {
@@ -31,7 +32,8 @@ namespace XamarinFirebaseIntegration.Droid.Firebase
             if (remoteMessage.Data.ContainsKey("Type") 
                 && remoteMessage.Data["Type"] == "Sync_Request")
             {
-                DispatchNoticeNotification("Sync", "Sync request");
+                Intent serviceIntent = new Intent(this, typeof(ForegroundSimulationService));
+                StartForegroundService(serviceIntent);
             }
             else
             {
