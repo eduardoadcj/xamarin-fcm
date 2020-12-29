@@ -77,6 +77,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Firebase\CustomFirebaseMessagingService.cs" />
+    <Compile Include="Firebase\OnCompleteListener.cs" />
+    <Compile Include="Firebase\TopicSubscriptionHandler.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
