@@ -21,31 +21,33 @@ namespace XamarinFirebaseIntegration.Droid.Firebase
     public class CustomFirebaseMessagingService : FirebaseMessagingService 
     {
 
-        private const string NOTIFICATION_CHANNEL_ID = "23432";
+        private const string NOTIFICATION_CHANNEL_ID = "1001";
+        private const string NOTIFICATION_CHANNEL_NAME = "XMobileNotificationChannel";
         private const string TAG = "CustomFirebaseMessagingService";
 
         public override void OnMessageReceived(RemoteMessage remoteMessage)
         {
             base.OnMessageReceived(remoteMessage);
+
             Log.Debug(TAG, "OnMessageReceived!");
 
             if (remoteMessage.Data.ContainsKey("Type") 
                 && remoteMessage.Data["Type"] == "Sync_Request")
-            {
+            { // Executes if came from the server.
                 Intent serviceIntent = new Intent(this, typeof(ForegroundSimulationService));
                 StartForegroundService(serviceIntent);
             }
             else
-            {
+            { // Executes if came from firebase.
                 var notification = remoteMessage.GetNotification();
-                DispatchNoticeNotification(notification.Title, notification.Body);
+                DispatchFirebaseNotification(notification.Title, notification.Body);
             }
         }
 
-        private void DispatchNoticeNotification(string title, string content)
+        private void DispatchFirebaseNotification(string title, string content)
         {
             NotificationChannel notificationChannel = new NotificationChannel(NOTIFICATION_CHANNEL_ID,
-                "canal", NotificationImportance.Max);
+                NOTIFICATION_CHANNEL_NAME, NotificationImportance.Max);
             notificationChannel.EnableLights(true);
 
             NotificationManager notificationManager = (NotificationManager)GetSystemService(Context.NotificationService);

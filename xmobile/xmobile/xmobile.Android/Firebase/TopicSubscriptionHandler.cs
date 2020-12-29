@@ -19,7 +19,8 @@ namespace xmobile.Droid.Firebase
     {
 
         private const string TAG = "TopicSubscriptionHandler";
-        private const string DEFAULT_TOPIC = "android";
+        private const string DEFAULT_OS_TOPIC = "android";
+
         private FirebaseMessaging _firebaseMessaging;
 
         public TopicSubscriptionHandler()
@@ -27,13 +28,20 @@ namespace xmobile.Droid.Firebase
             _firebaseMessaging = FirebaseMessaging.Instance;
         }
 
+        /**
+         * <summary>
+         * Sets the default OS topic subscription.
+         * </summary>
+         */
         public void Init()
         {
-            _firebaseMessaging.SubscribeToTopic(DEFAULT_TOPIC)
+            _firebaseMessaging.SubscribeToTopic(DEFAULT_OS_TOPIC)
                 .AddOnCompleteListener(new OnCompleteListener((task) =>
                 {
                     string result = task.IsSuccessful 
-                        ? "Default token successfully subscribed!" : "Fail to subscribe to default token!";
+                        ? "Default token successfully subscribed!" 
+                        : "Fail to subscribe to default token!";
+
                     Log.Info(TAG, result);
                 }));
         }

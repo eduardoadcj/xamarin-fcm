@@ -7,9 +7,9 @@
         <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
             <Label Text="Xamarin | FCM" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
         </Frame>
-        <Label Text="Aguarde notificações..." 
+        <Label Text="Wait for it!" 
                FontSize="Title" Margin="20"/>
-        <Label Text="As notificações poderão ser enviadas através do editor no console do Firebase, ou através do servidor NodeJs com o Firebase SDK." 
+        <Label Text="The messages can be sent through Firebase Console Editor or Firebase Admin SDK." 
                FontSize="16" Margin="20, 0, 20, 20"/>
     </StackLayout>
 
