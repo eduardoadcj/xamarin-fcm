@@ -25,3 +25,5 @@ separated in a fell steps:
 * Create a Firebase project and add the Android package name correctly.
 * Download the generated credentials json to root android project directory.
 * On Visual Studio, find the downloaded file, go to properties and defines the Compile Action to GoogleServiceJson. 
+
+With all the steps done, the next part is to identify the different messages that will come from Firebase and act accordingly.
