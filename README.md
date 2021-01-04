@@ -1,5 +1,5 @@
 # Xamarin FCM Integration Sample
-##### A example of how to integrate Firebase Cloud Messaging with Xamarin Android Applications.
+##### An example of how to integrate Firebase Cloud Messaging with Xamarin Android Applications.
 
 ### About Firebase Cloud Messaging
 Firebase Cloud Messaging (FCM) provides a connection between your server and devices that
